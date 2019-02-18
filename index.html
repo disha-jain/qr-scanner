@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>HooHacks</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#2d3436" />
+		<meta property="og:image" content="http://hackuva.io/images/mascot.png"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://hoohacks.io"/>
+		<meta property="og:title" content="HooHacks" />
+        <meta property="og:description" content="The premier annual hackathon of UVA is happening the weekend of March 2nd-3rd!" />
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <script>
+            function openQRCamera(node) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    node.value = "";
+                    qrcode.callback = function(res) {
+                        if(res instanceof Error) {
+                            alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                        } else {
+                            node.parentNode.previousElementSibling.value = res;
+                        }
+                    };
+                    qrcode.decode(reader.result);
+                };
+                reader.readAsDataURL(node.files[0]);
+            }
+            function showQRIntro() {
+                return confirm("Use your camera to take a picture of a QR code.");
+            }
+        </script>
+    </head>
+        
+        <body class="landing">
+            <label class=qrcode-text-btn>
+                <input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
+            </label>
+        </body>
+</html>
