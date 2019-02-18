@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "scripts/index.js"
+    "start": "node scripts/index.js"
   },
   "repository": {
     "type": "git",
