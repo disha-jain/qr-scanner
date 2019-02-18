@@ -1,6 +1,5 @@
 var height = 300;
 var width = 200;
-console.log("Everything has loaded");
 function drawOnCanvas(file) {
     var reader = new FileReader();
     var idata;
