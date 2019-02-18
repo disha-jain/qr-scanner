@@ -1,7 +1,9 @@
 {
   "requires": true,
   "lockfileVersion": 1,
-  "dependencies": {},
+  "dependencies": {
+    "jsqr": "^1.2.0"
+  },
   "name": "qr-scanner-app",
   "description": "qr-scanner for hoohacks",
   "version": "1.0.0",
